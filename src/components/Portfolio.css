@@ -1,0 +1,52 @@
+.portfolioBackground{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.portfolio-h1-text{
+  text-transform: uppercase;
+  position: relative;
+  z-index: 4;
+  opacity: 0;
+  animation: portfolio1 0.7s 0.8s ease-in forwards;
+  transition:1s;
+}
+
+
+  @keyframes portfolio1 {
+    0% {
+      /* transform: scale(0.7); */
+      opacity: 0.3;
+    }
+  
+    50% {
+      /* transform: scale(0.8); */
+      opacity: 0.9;
+    }
+  
+    100% {
+      /* transform: scale(1); */
+      opacity: 1;
+    }
+  }
+  .portfolio-h1-text.show {
+    font-weight: 900;
+    font-size: 5em;
+    
+
+  }
+  
+  .portfolio-h1-text.hide{
+    position: absolute;
+    text-transform: capitalize;
+    font-size: 1.6em;
+    font-weight: 800;
+    top: 1em;
+    right: 2em;
+    z-index: 200000;
+    cursor: pointer;
+  }

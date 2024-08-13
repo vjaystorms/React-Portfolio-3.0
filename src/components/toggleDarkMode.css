@@ -1,0 +1,72 @@
+/* DarkMode Toggle Button styles.css */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  body.dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+  .toggle-button-outter-border {
+    position: absolute;
+    top: 1.5em;
+    right: 4em;
+    z-index: 101;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 6.5em;
+    height: 3.5em;
+    background-color: #ffffff;
+    border: 0.35em solid #000000;
+    border-radius: 2em;
+  }
+  .toggle-1:focus{
+  -webkit-tap-highlight-color:transparent;
+  }
+  .toggle-button-inner-circle {
+    width: 2em;
+    height: 2em;
+    background-color: #000000;
+    border-radius: 2em;
+    margin: 0.5em;
+  }
+  
+  .Dark-Mode {
+    transform: translate(0, 0);
+    transition: 0.5s;
+  }
+  
+  .Light-Mode {
+    transform: translate(3em, 0);
+    transition: 0.5s;
+  }
+  
+  @media (max-width:991px) {
+    .toggle-button-outter-border {
+      width: 10.5em;
+      height: 5.5em;
+      border-radius: 5em;
+      border: 0.4em solid #000000;
+    }
+  
+    .toggle-button-inner-circle {
+      width: 3em;
+      height: 3em;
+      border-radius: 4em;
+      margin: 1em;
+    }
+  
+    .Light-Mode{
+      transform: translate(5em, 0);
+      transition: 0.5s;
+    }
+  }
+  
