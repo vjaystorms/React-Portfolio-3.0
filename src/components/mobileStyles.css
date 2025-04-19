@@ -1,0 +1,13 @@
+@media (max-width:991px) {
+    body {
+      font-size: 2em;
+    }
+    .portfolio-h1-text.show {
+        font-size: 4.2em;
+      }
+    
+      .portfolio-h1-text.hide {
+        font-size: 2em;
+        cursor: pointer;
+      }
+  }
