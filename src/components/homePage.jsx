@@ -1,8 +1,13 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+
+// Components
 import PortfolioLink from "./portfoliLink";
 import ToggleDarkMode from "./toggleDarkMode";
 import BlackWhiteBackground from "./blackWhitebackground";
+import { ThemeContext } from "./ThemeContext";
+
+// Styles & Assets
 import "./showParagraphButton.css";
 import "./threeParagraphedText.css";
 import "./showLinks.css";
@@ -10,21 +15,31 @@ import "./mobileStyles.css";
 import backgroundImages from "./assets/expand.png";
 
 function HomePage() {
-  const [showParagraphs, setShowParagraphs] = useState(false);
-  const [showLinks, setShowLinks] = useState(false);
+  // Get both values from context
+  const {
+    showLinks,
+    setShowLinks,
+    showParagraphs,
+    setShowParagraphs
+  } = useContext(ThemeContext);
+
   const sectionRef = useRef(null);
   const location = useLocation();
 
+  // Optional: reset on specific conditions like reloads or page refreshes
   useEffect(() => {
-    // Load state from local storage
-    const savedState = JSON.parse(localStorage.getItem("homePageState")) || {};
-    setShowParagraphs(savedState.showParagraphs || false);
-    setShowLinks(savedState.showLinks || false);
+    // This can load from localStorage if you still want persistence on refresh
+    const saved = JSON.parse(localStorage.getItem("homePageState")) || {};
+    setShowParagraphs(saved.showParagraphs || false);
+    setShowLinks(saved.showLinks || false);
   }, [location.state?.reload]);
 
   useEffect(() => {
-    // Save state to local storage
-    localStorage.setItem("homePageState", JSON.stringify({ showParagraphs, showLinks }));
+    // Save both values
+    localStorage.setItem("homePageState", JSON.stringify({
+      showParagraphs,
+      showLinks
+    }));
   }, [showParagraphs, showLinks]);
 
   const handleScroll = () => {
@@ -39,17 +54,20 @@ function HomePage() {
   };
 
   return (
-    <div className="app"> 
+    <div className="app">
 
-      <PortfolioLink actionType={showParagraphs}/>
-      <BlackWhiteBackground show={showParagraphs}/>
+      <PortfolioLink actionType={showParagraphs} />
+      <BlackWhiteBackground show={showParagraphs} />
 
-      {!showParagraphs ?(
+      {/* Toggle Dark Mode Button */}
+      {!showParagraphs && (
         <div>
           <ToggleDarkMode section={"showParagraphe"} />
         </div>
-      ):!showLinks && (
-        // This Section Would Be Displayed When showLinks Is False And showParagraphs is True
+      )}
+
+      {/* Animated Intro */}
+      {showParagraphs && !showLinks && (
         <div ref={sectionRef} className="ThreeParagraphedText">
           <span>I</span>
           <span>I am</span>
@@ -57,27 +75,31 @@ function HomePage() {
         </div>
       )}
 
-      {/* This Button Sets The showParagraphs To True */}
-      {!showLinks && !showParagraphs && (
+      {/* Arrow to reveal intro */}
+      {!showParagraphs && !showLinks && (
         <div className="showParagrapheButton">
-          <div onClick={handleScroll} style={{ backgroundImage: `url(${backgroundImages})` }} className="showParagrapheButtonArrow"></div>
+          <div
+            onClick={handleScroll}
+            style={{ backgroundImage: `url(${backgroundImages})` }}
+            className="showParagrapheButtonArrow"
+          ></div>
         </div>
       )}
 
-      {/* This Button Sets The showLinks To True */}
+      {/* Button to reveal navigation links */}
       {showParagraphs && !showLinks && (
         <div className="click-me-button" onClick={handleClick}>
           <div>Tap Anywhere</div>
         </div>
       )}
 
-      {/* This Section Would Be Displayed When showLinks Is True And showParagraphs is True */}
+      {/* Navigation links */}
       {showLinks && (
         <div className="ThreeParagraphedText links">
           <Link to="/about">About</Link>
           <Link to="/work">Work</Link>
           <Link style={{ color: "#e90f1f" }} to="/contact">Contact</Link>
-        </div> 
+        </div>
       )}
     </div>
   );
