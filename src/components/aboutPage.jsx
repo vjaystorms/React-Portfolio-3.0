@@ -29,7 +29,7 @@ function AboutPage() {
           whileInView="show"
           style={{ backgroundImage: `url(${backgroundImages})` }} className="img"></Motion.div>
         <Motion.p
-          variants={fadeIn('up', 0.4)}
+          variants={fadeIn('up', 0.3)}
           initial="hidden"
           whileInView="show"
         >
