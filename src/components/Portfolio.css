@@ -50,3 +50,13 @@
     z-index: 200000;
     cursor: pointer;
   }
+  @media (max-width:991px) {
+    .portfolio-h1-text.show {
+        font-size: 3em;
+      }
+    
+      .portfolio-h1-text.hide {
+        font-size: 1.5em;
+        cursor: pointer;
+      }
+  }

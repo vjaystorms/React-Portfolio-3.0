@@ -39,3 +39,9 @@
       transform: translate(0, 0);
     }
   }
+  @media (max-width:991px) {
+    .ThreeParagraphedText >*{
+      font-size: 4em;
+      margin: 10px 50px;
+  }
+  }

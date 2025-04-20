@@ -5,7 +5,7 @@ import HomePage from "./homePage";
 import ContactPage from "./contactPage";
 import AboutPage from "./aboutPage";
 import WorkPage from "./workPage";
-import ErrorPage from "./404Page";
+import ErrorPage from "./404Page"
 
 function App(){
     return(

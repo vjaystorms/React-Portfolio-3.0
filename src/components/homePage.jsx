@@ -11,7 +11,6 @@ import { ThemeContext } from "./ThemeContext";
 import "./showParagraphButton.css";
 import "./threeParagraphedText.css";
 import "./showLinks.css";
-import "./mobileStyles.css";
 import backgroundImages from "./assets/expand.png";
 
 function HomePage() {
