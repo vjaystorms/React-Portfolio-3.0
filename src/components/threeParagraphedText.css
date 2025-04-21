@@ -41,7 +41,7 @@
   }
   @media (max-width:991px) {
     .ThreeParagraphedText >*{
-      font-size: 4em;
-      margin: 10px 50px;
+      font-size: 4.2em;
+      margin: 10px 0 0 40px;
   }
   }

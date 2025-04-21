@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ThemeContext, ThemeProvider } from "./ThemeContext";
 import ToggleDarkMode from "./toggleDarkMode";
 import { motion as Motion } from "framer-motion"
-import { fadeIn, textVariant } from '../utilitis/motion'
+import { fadeIn } from '../utilitis/motion'
 import "./links.css"
 function ContactPage() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -39,34 +39,34 @@ function ContactPage() {
           Feel free to reach out through any platforms bellow:
         </Motion.p>
         <Motion.ul
-          variants={fadeIn('up', 0.6)}
+          variants={fadeIn('up', 0.2)}
           initial="hidden"
           whileInView="show"
         >
 
-          <li
-            variants={fadeIn('up', 0.6)}
+          <Motion.li
+            variants={fadeIn('up', 0.2)}
             initial="hidden"
             whileInView="show"
-          > <a href="mailto:victorsalimon6@gmail.com?subject=Job%20Proposition%20&body=Hello%20Victor%20">Email </a></li>
+          > <a href="mailto:victorsalimon6@gmail.com?subject=Job%20Proposition%20&body=Hello%20Victor%20">Email </a></Motion.li>
 
-          <li
-            variants={fadeIn('up', 0.7)}
+          <Motion.li
+            variants={fadeIn('up', 0.3)}
             initial="hidden"
             whileInView="show"
-          > <a href="https://github.com/vjaystorms/Blog-wedsite.git">GitHub </a></li>
+          > <a href="https://github.com/vjaystorms/Blog-wedsite.git">GitHub </a></Motion.li>
 
-          <li
-            variants={fadeIn('up', 0.8)}
+          <Motion.li
+            variants={fadeIn('up', 0.4)}
             initial="hidden"
             whileInView="show"
-          > <a href="https://www.linkedin.com/in/victor-salimon-a643301b2">Linkedin </a></li>
+          > <a href="https://www.linkedin.com/in/victor-salimon-a643301b2">Linkedin </a></Motion.li>
 
-          <li
-            variants={fadeIn('up', 1)}
+          <Motion.li
+            variants={fadeIn('up', 0.5)}
             initial="hidden"
             whileInView="show"
-          > <a href="https://wa.me/2349161763951?text=Hello!%20Good%20to%20see%20you">WhatsApp </a></li>
+          > <a href="https://wa.me/2349161763951?text=Hello!%20Good%20to%20see%20you">WhatsApp </a></Motion.li>
 
         </Motion.ul>
       </Motion.div>
