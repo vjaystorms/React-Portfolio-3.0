@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { motion as Motion } from "framer-motion"
+import { fadeIn } from '../utilitis/motion'
 
 // Components
 import PortfolioLink from "./portfoliLink";
@@ -31,7 +33,7 @@ function HomePage() {
     const saved = JSON.parse(localStorage.getItem("homePageState")) || {};
     setShowParagraphs(saved.showParagraphs || false);
     setShowLinks(saved.showLinks || false);
-  }, [location.state.reload, setShowLinks, setShowParagraphs]);
+  }, [location.state?.reload]);
 
   useEffect(() => {
     // Save both values
@@ -68,9 +70,25 @@ function HomePage() {
       {/* Animated Intro */}
       {showParagraphs && !showLinks && (
         <div ref={sectionRef} className="ThreeParagraphedText">
-          <span>I</span>
-          <span>I am</span>
-          <span style={{ color: "#e90f1f" }}>Abiola</span>
+          <Motion.span
+            variants={fadeIn('up', 0.5)}
+            initial="hidden"
+            whileInView="show">
+            I
+          </Motion.span>
+          <Motion.span
+            variants={fadeIn('up', 0.6)}
+            initial="hidden"
+            whileInView="show">
+            I am
+          </Motion.span>
+          <Motion.span
+            variants={fadeIn('up', 0.7)}
+            initial="hidden"
+            whileInView="show"
+            style={{ color: "#e90f1f" }}>
+            Abiola
+          </Motion.span>
         </div>
       )}
 
@@ -80,8 +98,8 @@ function HomePage() {
           <div
             onClick={handleScroll}
             style={{ backgroundImage: `url(${backgroundImages})` }}
-            className="showParagrapheButtonArrow">
-          </div>
+            className="showParagrapheButtonArrow"
+          ></div>
         </div>
       )}
 
@@ -95,9 +113,25 @@ function HomePage() {
       {/* Navigation links */}
       {showLinks && (
         <div className="ThreeParagraphedText links">
-          <Link to="/about">About</Link>
-          <Link to="/work">Work</Link>
-          <Link style={{ color: "#e90f1f" }} to="/contact">Contact</Link>
+          <Motion.span
+            variants={fadeIn('up', 0.2)}
+            initial="hidden"
+            whileInView="show"
+            to="/about">
+            About
+          </Motion.span>
+          <Motion.span
+            variants={fadeIn('up', 0.3)}
+            initial="hidden"
+            whileInView="show"
+            to="/about">
+            Work
+          </Motion.span>
+          <Motion.span
+            variants={fadeIn('up', 0.4)}
+            initial="hidden"
+            whileInView="show"
+            style={{ color: "#e90f1f" }} to="/contact">Contact</Motion.span>
         </div>
       )}
     </div>
