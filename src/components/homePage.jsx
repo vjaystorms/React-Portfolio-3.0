@@ -112,26 +112,38 @@ function HomePage() {
 
       {/* Navigation links */}
       {showLinks && (
-        <div className="ThreeParagraphedText links">
-          <Motion.span
+        <div className="ThreeParagraphedText z-index links">
+          <Motion.div
             variants={fadeIn('up', 0.2)}
             initial="hidden"
             whileInView="show"
-            to="/about">
-            About
-          </Motion.span>
-          <Motion.span
+          >
+            <Link
+              to="/about">
+              About
+            </Link>
+          </Motion.div>
+          <Motion.div
             variants={fadeIn('up', 0.3)}
             initial="hidden"
             whileInView="show"
-            to="/about">
-            Work
-          </Motion.span>
-          <Motion.span
+          >
+            <Link
+              to="/work">
+              Work
+            </Link>
+          </Motion.div>
+          <Motion.div
             variants={fadeIn('up', 0.4)}
             initial="hidden"
             whileInView="show"
-            style={{ color: "#e90f1f" }} to="/contact">Contact</Motion.span>
+          >
+            <Link
+              style={{ color: "#e90f1f" }}to="/contact">
+              Contact
+            </Link>
+          </Motion.div>
+
         </div>
       )}
     </div>
