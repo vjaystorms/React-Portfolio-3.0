@@ -62,6 +62,6 @@
     
       .portfolio-h1-text.hide {
         font-size: 1.5em;
-        cursor: pointer;
+        cursor: default;
       }
   }

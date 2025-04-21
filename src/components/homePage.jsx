@@ -31,7 +31,7 @@ function HomePage() {
     const saved = JSON.parse(localStorage.getItem("homePageState")) || {};
     setShowParagraphs(saved.showParagraphs || false);
     setShowLinks(saved.showLinks || false);
-  }, [location.state?.reload]);
+  }, [location.state.reload, setShowLinks, setShowParagraphs]);
 
   useEffect(() => {
     // Save both values

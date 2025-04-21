@@ -133,8 +133,7 @@ color: #000000;
   }
   
   .wrapper {
-    padding: 3em 0 3em 3em;
-    /* padding: 3em */
+    padding: 3em
   }
   
   a {
@@ -195,16 +194,19 @@ color: #000000;
     
     p {
       min-width: 1em;
-      padding: 3em 1em 3em 0;
+      padding: 3em 1em 1em 0;
       line-height: 1.5em;
     }
     .contact-p {
       min-width: 1em;
-      padding: 3em 1em 3em 0;
+      padding: 2em 1em 3em 0;
     }
     .img{
       width: 30em;
       height: 30em;
+      margin: 2em 0;
+    }
+    .btn {
       margin: 2em 0;
     }
   }

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeContext, ThemeProvider } from "./ThemeContext";
 import { motion as Motion } from "framer-motion"
-import { fadeIn, textVariant } from '../utilitis/motion'
+import { fadeIn } from '../utilitis/motion'
 import ToggleDarkMode from "./toggleDarkMode";
 import "./links.css"
 import backgroundImages from "./assets/img.jpg"
