@@ -4,6 +4,8 @@
   z-index: 30;
   right: 0;
   top: 0;
+  bottom: 0;
+  overflow: hidden;
   width: 100%;
   animation: FirstIntro 1.5s 2s ease-in forwards;
 }
