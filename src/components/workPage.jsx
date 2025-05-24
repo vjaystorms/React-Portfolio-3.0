@@ -26,6 +26,13 @@ function WorkPage() {
           variants={textVariant(0.6)}
           style={{ color: "#e90f1f" }} className="a-2 pointer"><a href="https://react-landing-page-taiilwind-css-framer-motion.vercel.app/">Modern Landing Page | React,Tailwindcss and Framer motion</a></Motion.h5>
 
+        <Motion.h4
+          variants={textVariant(0.7)}
+        >Weather App</Motion.h4>
+        <Motion.h5
+          variants={textVariant(0.8)}
+          style={{ color: "#e90f1f" }} className="a-2 pointer"><a href="https://weather-app-three-chi-54.vercel.app/">Weather Dashboard | React, React Query, API Integration</a></Motion.h5>
+
       </Motion.div>
     </div>
   )
